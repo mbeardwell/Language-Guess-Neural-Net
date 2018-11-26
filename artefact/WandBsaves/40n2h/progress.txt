@@ -1,0 +1,3 @@
+Completed running of 20 loops
+[15, 40, 2, 0.001, 6]
+['N', 'hiddenNodes', 'hiddenLayers', 'learning_rate', 'languages']
