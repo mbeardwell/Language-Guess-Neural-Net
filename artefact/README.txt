@@ -2,6 +2,20 @@ DISCLAIMER
 I cannot guarantee that the program will run on every system or that it is known how to run it. 
 It is still possible to open all of the program files to read the code. I have included instructions below, if applicable.
 
+FILE INFORMATION
+'data' stores the test and train set of words used by the network.
+
+'WandBsaves' has the network's final weights and biases after 20 iterations for each of 12 different networks styles. 
+This is so a programmer can import them to see their accuracy and other features instead of retraining the network 
+for many hours, like I did, to get to the same point.
+
+'artefact.py' is the user interface for the network. It imports the generic feedforward neural network in 'feedforward.py'
+ and instantiates the network class with various values such as the step size.
+
+'confidences.csv' is the output of the guess confidence for each word in the test set
+
+'feedforward.py' is the main body of code of the neural network
+
 ARTEFACT FILE LOCATION
 The main body of the artefact has location "\artefact and results\artefact.py".
 This uses code stored in "\artefact and results\feedforward.py" which is also a part of the artefact.
