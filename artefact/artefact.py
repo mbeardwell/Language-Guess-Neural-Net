@@ -17,9 +17,11 @@ def load(cache,fromCache=True): # loads weights and biases from a file stored ne
     cachePath = os.path.join("cache",cache)
   else:
     cachePath = cache
+    
   weightPath = os.path.join(cachePath,"weights")
   biasPath = os.path.join(cachePath,"biases")  
   weightNames, biasNames = os.listdir(weightPath), os.listdir(biasPath)
+  
   # loading weights
   weightNums = []
   for fileName in weightNames:
@@ -123,7 +125,8 @@ while True:
   print("-"*30)
 
 
-# Putting speech marks """ around  the load(..) line and the while loop above, the programmer can remove the speech marks around the following section. This will let him/her train and test a network and save necessary parts to a file after each iteration. This is what I used to train and test my network and output the results.
+# Putting speech marks """ around  the load(..) line and the while loop above, the programmer can remove the speech marks around the following section. This will let him/her train and test a network and save necessary parts to a file after each iteration. 
+# This is what I used to train and test my network and output the results.
 """
 cacheName = findNewCache()
 saveHyps()

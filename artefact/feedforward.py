@@ -62,10 +62,13 @@ class network:
       self.word = self.word[:14]
     self.forprop()
     output = self.a[-1]
+    
+    # convert output to floats
     temp = []
     for i in output:
       temp.append(float(i))
     output = temp
+    
     maxVal = float( max(output) )
     guess = list(output).index(maxVal)
     languages = ["French","German","Greek","Italian","Japanese","Latin"]
