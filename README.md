@@ -4,7 +4,7 @@ An application that uses a **feedforward neural network** to guess the language 
 
 ## Project Paper
 For a detailed explanation of the methodology, implementation, and results, read the full project paper here:  
-[4_Project_Outcome.pdf](./4_Project_Outcome.pdf)
+[4 Project Outcome.pdf](./4%20Project%20Outcome.pdf)
 
 ## Overview
 - **Neural Network Type:** Feedforward network with backpropagation
