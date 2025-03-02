@@ -31,7 +31,7 @@ For a detailed explanation of the methodology, implementation, and results, read
 python3 -m pip install numpy
 ```
 
-3. Clone the repository:
+2. Clone the repository:
 ```bash
 git clone https://github.com/mbeardwell/language-guesser.git
 cd language-guesser
