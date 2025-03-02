@@ -28,7 +28,7 @@ def load(cache,fromCache=True): # loads weights and biases from a file stored ne
     weightNums.append( int(fileName[6:-4]) )
   weights = [0]*( len(weightNames) +1 )
   for i in weightNums:
-    weights[i] = np.load(weightPath + "\\" + weightNames[i-1])['w']
+    weights[i] = np.load(os.path.join(weightPath,weightNames[i-1]))['w']
   h.w = weights
   # loading biases
   biasNums = []
@@ -36,7 +36,7 @@ def load(cache,fromCache=True): # loads weights and biases from a file stored ne
     biasNums.append(int(fileName[4:-4]))
   biases = [0]*( len(biasNames) +1 )
   for i in weightNums:
-    biases[i] = np.load(biasPath + "\\" + biasNames[i-1])['b']
+    biases[i] = np.load(os.path.join(biasPath, biasNames[i-1]))['b']
   h.b = biases
 
 def findNewCache(): # for a programmer to save network to a file
@@ -48,11 +48,11 @@ def findNewCache(): # for a programmer to save network to a file
     cacheName = str(max(allCaches)+1)
   else:
     cacheName = "0"
-  path = "cache\\"+cacheName
+  path = os.path.join("cache",cacheName)
   if not os.path.exists(path):
     os.makedirs(path)
-    os.makedirs(path+"\\weights")
-    os.makedirs(path+"\\biases")
+    os.makedirs(os.path.join(path, "weights"))
+    os.makedirs(os.path.join(path,"biases"))
   return cacheName
 
 def saveProgress(done=False):
@@ -60,25 +60,26 @@ def saveProgress(done=False):
   
   # Save weights and biases
   for i in range(1,len(h.w)):
-    np.savez("cache\\{}\\weights\\{}".format(cacheName,str(i)),w=h.w[i])
+    np.savez(os.path.join("cache",cacheName,"weights",str(i)),w=h.w[i])
+
   for i in range(1,len(h.b)):
-    np.savez("cache\\{}\\biases\\{}".format(cacheName,str(i)),b=h.b[i])  
+    np.savez(os.path.join("cache",cacheName,"biases",str(i)),b=h.b[i])
   
   # Save current position
-  with open("cache\\{}\\progress.txt".format(cacheName),"w") as file:
+  with open(os.path.join("cache",cacheName,"progress.txt"),"w") as file:
     if done == True:
       file.writelines("Completed running of {} loops\n".format(trainingLoops))
     else:
       file.writelines("Finished loop {} out of {}".format(loop+1,trainingLoops))
       
   # Save performance of network at current iteration
-  with open("cache\\{}\\performance.csv".format(cacheName),"a",newline='') as file:
+  with open(os.path.join("cache", cacheName, "performance.csv"),"a",newline='') as file:
     accuracy = correct/(correct+incorrect)
     csv.writer(file).writerow([accuracy,loop+1])
 
 def saveHyps(): # saving hyperparameters of network to a file
   global cacheName,hyperparameters
-  with open("cache\\{}\\hyperparameters.txt".format(cacheName),"w") as file:
+  with open(os.path.join("cache", cacheName, "hyperparameters.txt"),"w") as file:
     file.writelines(str(hyperparameters)+"\n")
     file.writelines(str(h.hypNames)+"\n")  
   
@@ -107,15 +108,15 @@ def getData(name): # reads train/test file and reformats each line into a usable
   return data
 
 # initialise network
-data = getData("data\\trainData.txt")
-testData = getData("data\\testData.txt")
+data = getData(os.path.join("data","trainData.txt"))
+testData = getData(os.path.join("data","testData.txt"))
 
 hyperparameters = [15,200,1,0.001,6]
 h = network(hyperparameters)
 trainingLoops = 20
 
 # can load a network with the same shape by referencing cache it is stored in - ie. load("9") or load("WandBsaves\\200n1h",fromCache=False)
-load("WandBsaves\\200n1h",fromCache=False)
+load(os.path.join("data", "WandBsaves","200n1h"),fromCache=False)
 
 while True:
   print("\nInput a word and I'll guess what langauge it is.\nThe language must be French, Greek, German, Italian, Latin or Japanese\n")
