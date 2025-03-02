@@ -12,8 +12,7 @@ While originally an academic project, this implementation remains a pure, low-le
 - **Relevance today** – Though created in 2017, the project showcases core ML principles still used in modern AI.
 
 ## Project Paper
-For a detailed explanation of the methodology, implementation, and results, read the full project paper here:  
-[Neural_Network_Language_Classifier.pdf](./docs/Neural_Network_Language_Classifier.pdf)
+For a detailed explanation of the methodology, implementation, and results, read the full project paper [here](./docs/Neural_Network_Language_Classifier.pdf).
 
 ## Results
 - **Best accuracy:** 69.3% (compared to 16.7% random baseline).
