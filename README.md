@@ -13,7 +13,7 @@ While originally an academic project, this implementation remains a pure, low-le
 
 ## Project Paper
 For a detailed explanation of the methodology, implementation, and results, read the full project paper here:  
-[4 Project Outcome.pdf](./4%20Project%20Outcome.pdf)
+[Neural_Network_Language_Classifier.pdf](./docs/Neural_Network_Language_Classifier.pdf)
 
 ## Results
 - **Best accuracy:** 69.3% (compared to 16.7% random baseline).
