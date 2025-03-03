@@ -4,13 +4,6 @@ This project implements a **feedforward neural network from scratch** to classif
 
 While originally an academic project, this implementation remains a pure, low-level demonstration of neural networks, covering forward propagation, backpropagation, weight optimisation, and training strategies—all coded manually without TensorFlow or PyTorch.
 
-## Why This Project Stands Out
-- No ML frameworks used – The neural network, including backpropagation, was coded from scratch using just Python & NumPy.
-- Hyperparameter tuning – Investigated effects of hidden layers, neurons per layer, and learning rate on accuracy.
-- Real experimentation – Evaluated model performance over 20 iterations per configuration, testing six languages.
-- Overcoming challenges – Switched focus when early attempts at Hangman difficulty prediction failed, demonstrating adaptability.
-- Relevance today – Though created in 2017, the project showcases core ML principles still used in modern AI.
-
 ## Project Paper
 For a detailed explanation of the methodology, implementation, and results, read the full project paper [here](./docs/Neural_Network_Language_Classifier.pdf).
 
